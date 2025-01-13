@@ -4,6 +4,9 @@ import Service from "./services";
 import WorkWithUs from "./workwithus";
 import Numbers from "./numbers";
 import Discover from "./discover";
+import Outdoor from "./outdoor";
+import StreetPromo from "./StreetPromo";
+import Gallery from "./gallery";
 
 const Home = () => {
   return (
@@ -13,6 +16,9 @@ const Home = () => {
       <Numbers/>
       <WorkWithUs/>
       <Discover/>
+      <Outdoor/>
+      <StreetPromo/>
+      <Gallery/>
     </div>
   );
 };

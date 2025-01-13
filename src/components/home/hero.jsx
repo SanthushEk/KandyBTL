@@ -48,28 +48,31 @@ const hero = () => {
   return (
     <div
       className="h-[80vh] bg-cover bg-center relative transition-all duration-1000 flex items-center justify-center"
-      style={{ backgroundImage: `url(${image})` }}
+      style={{ backgroundImage: `url(${image})`,
+      backgroundAttachment: "fixed",    
+      backgroundSize: "cover",
+    }}
     >
       {/* Black overlay */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 bg-black opacity-70"></div>
 
       {/* Navigation arrows */}
       <button
         onClick={handlePrev}
         className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition z-20"
       >
-        <FaArrowLeft size={30} />
+        <FaArrowLeft size={24} />
       </button>
       <button
         onClick={handleNext}
         className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition z-20"
       >
-        <FaArrowRight size={30} />
+        <FaArrowRight size={24} />
       </button>
 
       {/* Hero content */}
       <div className="relative text-center z-10 px-5 sm:px-10">
-        <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold font-montserrat mb-4 flex justify-center items-center text-white">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold font-titlefonts mb-4 flex justify-center items-center text-white">
           <span className="w-10 h-0.5 bg-yellow mr-3"></span>
           {title}
           <span className="w-10 h-0.5 bg-yellow ml-3"></span>
@@ -77,12 +80,12 @@ const hero = () => {
         <p className="text-xl sm:text-3xl mb-4 font-montserrat font-medium text-white">
           {subtitle}
         </p>
-        <p className="px-10 text-base sm:text-lg md:text-lg font-montserrat mb-6 text-white font-medium">
+        <p className="px-10 md:px-40 text-base sm:text-lg md:text-lg font-poppins mb-16 text-white font-medium">
           {description}
         </p>
         <a
           href="#contact"
-          className="bg-yellow text-secondary py-3 px-10 rounded-lg text-sm hover:bg-secondary transition"
+          className="bg-yellow text-secondary py-3 px-10 rounded-lg text-lg transition font-poppins font-semibold"
         >
           WhatsApp
         </a>

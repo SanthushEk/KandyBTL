@@ -9,7 +9,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-footer text-white py-10 font-poppins">
+    <footer className="bg-footer text-white py-10 px-5 font-poppins">
       {/* KANDY BTL Section */}
       <div className="container mx-auto mb-8">
         {/* Text Section */}

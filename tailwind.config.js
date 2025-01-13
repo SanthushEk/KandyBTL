@@ -11,11 +11,12 @@ module.exports = {
         secondary : '#002244',
         yellow : '#FFD700',
         oxfordBlue:'#002147',
-        footer: '#050521' // Add #252627 as the primary color
+        footer: '#050521',
+        navbar: '#0F0E0E', // Add #252627 as the primary color
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'], // Set Poppins as the default sans font
-        montserrat: ['Montserrat', 'sans-serif'], // Add Montserrat as an additional font option
+        poppins: ['Poppins', 'sans-serif'], // Set Poppins as the default sans font 
+        titlefonts : ["Varela Round", 'serif']
       },
     },
   },

@@ -16,7 +16,9 @@ const Numbers = () => {
   return (
     <div
       className="w-full h-auto md:h-[45vh] bg-cover bg-center relative"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      style={{ backgroundImage: `url(${bgImage})`,
+      backgroundAttachment: "fixed",    
+      backgroundSize: "cover", }}
     >
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black opacity-60"></div>

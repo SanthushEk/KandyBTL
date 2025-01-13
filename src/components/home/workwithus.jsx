@@ -12,9 +12,9 @@ const WorkWithUs = () => {
   });
 
   return (
-    <div className="flex flex-col md:flex-row h-auto md:h-[70vh] mt-8 mb-8">
+    <div className="flex flex-col md:flex-row h-auto md:h-[70vh] m-4  ">
       {/* Left section with bg-primary */}
-      <div className="w-full md:w-1/2 bg-primary p-2 flex items-center font-poppins">
+      <div className="w-full md:w-1/2 bg-primary  flex items-center font-poppins">
         {/* New container to align content to the left and center it vertically */}
         <div className="w-full text-left pl-10">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Kandy, Sri Lanka</h2>
@@ -35,7 +35,9 @@ const WorkWithUs = () => {
       {/* Right section with background image and black overlay */}
       <div
         className="w-full md:w-1/2 relative bg-cover bg-center h-[50vh] md:h-full"
-        style={{ backgroundImage: `url(${bgimage})` }}
+        style={{ backgroundImage: `url(${bgimage})`,
+        backgroundAttachment: "fixed",    
+        backgroundSize: "cover", }}
       >
         {/* Black overlay */}
         <div className="absolute inset-0 bg-black opacity-80"></div>

@@ -115,7 +115,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <nav className="flex justify-between items-center p-4 bg-gray-800 text-primary font-poppins font-medium">
+      <nav className="flex justify-between items-center p-4 bg-navbar text-primary font-poppins font-medium">
         {/* Left: Hamburger Menu (Mobile) */}
         <div className="md:hidden">
           <button
@@ -157,36 +157,13 @@ const Navbar = () => {
           </div>
 
           {/* Services Dropdown */}
-          <div className="relative">
-            <button
-              onClick={toggleDropdown}
-              className="flex items-center cursor-pointer transition-all duration-300 ease-in-out"
-            >
-              <span
-                className={`mr-2 hover:text-yellow ${
-                  activeItem === "services" ? "text-yellow" : ""
-                }`}
-              >
-                Services
-              </span>
-              <BsFillCaretDownFill />
-            </button>
-            {isDropdownOpen && (
-              <ul className="absolute left-0 mt-2 w-48 bg-white text-black p-2 shadow-lg">
-                <li
-                  className="py-1 px-2 hover:bg-gray-200 cursor-pointer"
-                  onClick={() => handleNavItemClick("corporate")}
-                >
-                  Corporate Events
-                </li>
-                <li
-                  className="py-1 px-2 hover:bg-gray-200 cursor-pointer"
-                  onClick={() => handleNavItemClick("sport")}
-                >
-                  Sport Events
-                </li>
-              </ul>
-            )}
+          <div
+            onClick={() => handleNavItemClick("home")}
+            className={`cursor-pointer hover:text-yellow transition-all duration-300 ease-in-out ${
+              activeItem === "home" ? "text-yellow" : ""
+            }`}
+          >
+            Services
           </div>
 
           {/* Contact Us */}
@@ -203,24 +180,23 @@ const Navbar = () => {
         {/* Right: Search Bar and More (Mobile) */}
         <div className="flex items-center space-x-2">
           {/* Search Bar - Only show icon initially, input shows when clicked */}
-          <div className="relative">
-            {isSearchOpen ? (
-              <input
-                type="text"
-                placeholder="Search"
-                className="p-2 pl-3 pr-10 rounded-lg bg-transparent border-2 border-yellow text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            ) : null}
+          {/* Search Bar - Only show icon initially, input shows when clicked */}
+          <div className="relative flex items-center">
+            <input
+              type="text"
+              placeholder="Search"
+              className="p-2 pl-3 pr-10 rounded-lg bg-transparent border border-yellow text-white focus:outline-none md:w-48 w-32"
+            />
 
             {/* Search Icon Button */}
             <button
               onClick={toggleSearch}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2  p-2 rounded-r-md transition-all duration-300 ease-in-out"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 rounded-r-md transition-all duration-300 ease-in-out"
             >
-              <FaSearch size={18} />
+              <FaSearch size={18} className="text-yellow" />{" "}
+              {/* Apply the color here */}
             </button>
           </div>
-
           {/* Three-dot Menu (Visible only on mobile) */}
           <div className="md:hidden">
             <button
