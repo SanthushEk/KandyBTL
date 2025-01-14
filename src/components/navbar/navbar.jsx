@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import {
   FaSearch,
   FaFacebook,
@@ -147,39 +148,41 @@ const Navbar = () => {
         {/* Center: Navbar Menu (Hidden on Mobile) */}
         <div className="hidden md:flex space-x-6 justify-start">
           {/* Home */}
-          <div
+          <Link
+            to="/"
             onClick={() => handleNavItemClick("home")}
             className={`cursor-pointer hover:text-yellow transition-all duration-300 ease-in-out ${
               activeItem === "home" ? "text-yellow" : ""
             }`}
           >
             Home
-          </div>
+          </Link>
 
           {/* Services Dropdown */}
-          <div
-            onClick={() => handleNavItemClick("home")}
+          <Link
+            to="/service"
+            onClick={() => handleNavItemClick("services")}
             className={`cursor-pointer hover:text-yellow transition-all duration-300 ease-in-out ${
-              activeItem === "home" ? "text-yellow" : ""
+              activeItem === "services" ? "text-yellow" : ""
             }`}
           >
             Services
-          </div>
+          </Link>
 
           {/* Contact Us */}
-          <div
+          <Link
+            to="/contactus"
             onClick={() => handleNavItemClick("contact")}
             className={`cursor-pointer hover:text-yellow transition-all duration-300 ease-in-out ${
-              activeItem === "contact" ? "text-secondary" : ""
+              activeItem === "contact" ? "text-yellow" : ""
             }`}
           >
             Contact Us
-          </div>
+          </Link>
         </div>
 
         {/* Right: Search Bar and More (Mobile) */}
         <div className="flex items-center space-x-2">
-          {/* Search Bar - Only show icon initially, input shows when clicked */}
           {/* Search Bar - Only show icon initially, input shows when clicked */}
           <div className="relative flex items-center">
             <input
@@ -193,17 +196,17 @@ const Navbar = () => {
               onClick={toggleSearch}
               className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 rounded-r-md transition-all duration-300 ease-in-out"
             >
-              <FaSearch size={18} className="text-yellow" />{" "}
-              {/* Apply the color here */}
+              <FaSearch size={18} className="text-yellow" />
             </button>
           </div>
+
           {/* Three-dot Menu (Visible only on mobile) */}
           <div className="md:hidden">
             <button
               onClick={toggleMoreMenu}
               className={`text-white transition-all duration-300 ease-in-out transform ${
                 isMoreMenuOpen ? "scale-60" : "scale-80"
-              }`} // Apply scaling transition when clicked
+              }`}
             >
               <FiMoreVertical size={24} />
             </button>
@@ -239,82 +242,39 @@ const Navbar = () => {
                       Mon - Sat 8:00 - 17:30, Sunday - CLOSED
                     </span>
                   </div>
-
-                  {/* Social Media Icons - Centered */}
-                  <div className="flex justify-center space-x-4">
-                    <a
-                      href="https://facebook.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaFacebook
-                        size={24}
-                        className="text-secondary hover:text-yellow"
-                      />
-                    </a>
-                    <a
-                      href="https://twitter.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaSquareXTwitter
-                        size={24}
-                        className="text-secondary hover:text-yellow"
-                      />
-                    </a>
-                    <a
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaInstagram
-                        size={24}
-                        className="text-secondary hover:text-yellow"
-                      />
-                    </a>
-                    <a
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaLinkedin
-                        size={24}
-                        className="text-secondary hover:text-yellow"
-                      />
-                    </a>
-                  </div>
                 </div>
               </div>
             )}
           </div>
         </div>
-
-        {/* Mobile Menu (Show when hamburger is clicked) */}
-        {isMobileMenuOpen && (
-          <div className="absolute top-20 left-0 w-full bg-primary text-black p-4 shadow-lg md:hidden z-50">
-            <ul>
-              <li
-                className="py-2 px-2 hover:bg-yellow cursor-pointer rounded-lg"
-                onClick={() => handleNavItemClick("home")}
-              >
-                Home
-              </li>
-              <li
-                className="py-2 px-2 hover:bg-yellow cursor-pointer rounded-lg"
-                onClick={() => handleNavItemClick("services")}
-              >
-                Services
-              </li>
-              <li
-                className="py-2 px-2 hover:bg-yellow cursor-pointer rounded-lg"
-                onClick={() => handleNavItemClick("contact")}
-              >
-                Contact Us
-              </li>
-            </ul>
-          </div>
-        )}
       </nav>
+
+      {/* Mobile Menu (Toggle this when Hamburger is clicked) */}
+      {isMobileMenuOpen && (
+        <div className="flex flex-col space-y-4 p-4 bg-primary text-secondary md:hidden">
+          <Link
+            to="/"
+            onClick={() => handleNavItemClick("home")}
+            className="text-xl font-medium text-secondary"
+          >
+            Home
+          </Link>
+          <Link
+            to="/service"
+            onClick={() => handleNavItemClick("services")}
+            className="text-xl font-medium text-secondary"
+          >
+            Services
+          </Link>
+          <Link
+            to="/contactus"
+            onClick={() => handleNavItemClick("contactus")}
+            className="text-xl font-medium text-secondary"
+          >
+            Contact Us
+          </Link>
+        </div>
+      )}
     </>
   );
 };

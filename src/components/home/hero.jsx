@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import bg1 from "../../assets/bg_image.jpg";
-import bg2 from "../../assets/bg_image3.jpg";
+import bg2 from "../../assets/contactbg.jpg";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion"; // Import motion
 
@@ -56,7 +56,7 @@ const Hero = () => {
       }}
     >
       {/* Black overlay */}
-      <div className="absolute inset-0 bg-black opacity-70"></div>
+      <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Navigation arrows */}
       <button
