@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import bg1 from "../../assets/bg_image.jpg";
 import bg2 from "../../assets/bg_image3.jpg";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion"; // Import motion
 
-const hero = () => {
+const Hero = () => {
   const slides = [
     {
       image: bg1,
@@ -48,10 +49,11 @@ const hero = () => {
   return (
     <div
       className="h-[80vh] bg-cover bg-center relative transition-all duration-1000 flex items-center justify-center"
-      style={{ backgroundImage: `url(${image})`,
-      backgroundAttachment: "fixed",    
-      backgroundSize: "cover",
-    }}
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundAttachment: "fixed",
+        backgroundSize: "cover",
+      }}
     >
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black opacity-70"></div>
@@ -72,17 +74,39 @@ const hero = () => {
 
       {/* Hero content */}
       <div className="relative text-center z-10 px-5 sm:px-10">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold font-titlefonts mb-4 flex justify-center items-center text-white">
+        {/* Title */}
+        <motion.h1
+          className="text-3xl sm:text-4xl md:text-6xl font-semibold font-quoteFonts mb-4 flex justify-center items-center text-white"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           <span className="w-10 h-0.5 bg-yellow mr-3"></span>
           {title}
           <span className="w-10 h-0.5 bg-yellow ml-3"></span>
-        </h1>
-        <p className="text-xl sm:text-3xl mb-4 font-montserrat font-medium text-white">
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          className="text-xl sm:text-3xl mb-4 font-poppins font-medium text-white"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
           {subtitle}
-        </p>
-        <p className="px-10 md:px-40 text-base sm:text-lg md:text-lg font-poppins mb-16 text-white font-medium">
+        </motion.p>
+
+        {/* Description */}
+        <motion.p
+          className="px-10 md:px-40 text-base sm:text-lg md:text-lg font-poppins mb-16 text-white font-medium"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+        >
           {description}
-        </p>
+        </motion.p>
+
+        {/* WhatsApp button */}
         <a
           href="#contact"
           className="bg-yellow text-secondary py-3 px-10 rounded-lg text-lg transition font-poppins font-semibold"
@@ -94,4 +118,4 @@ const hero = () => {
   );
 };
 
-export default hero;
+export default Hero;

@@ -16,7 +16,8 @@ module.exports = {
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'], // Set Poppins as the default sans font 
-        titlefonts : ["Varela Round", 'serif']
+        titlefonts : ["Varela Round", 'serif'],
+        quoteFonts : ["Electrolize", 'serif']
       },
     },
   },

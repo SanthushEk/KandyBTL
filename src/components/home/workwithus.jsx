@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
 import bgimage from "../../assets/image1.jpg";
 import { FaPenFancy, FaUsers, FaBullhorn, FaGlobe } from "react-icons/fa"; // Importing icons for the cards
+import { motion } from "framer-motion"; // Import Framer Motion
 
 const WorkWithUs = () => {
   // Intersection Observer hook to detect when cards are visible
@@ -12,11 +13,17 @@ const WorkWithUs = () => {
   });
 
   return (
-    <div className="flex flex-col md:flex-row h-auto md:h-[70vh] m-4  ">
+    <div className="flex flex-col md:flex-row h-auto md:h-[70vh] m-4">
       {/* Left section with bg-primary */}
-      <div className="w-full md:w-1/2 bg-primary  flex items-center font-poppins">
+      <div className="w-full md:w-1/2 bg-primary flex items-center font-poppins">
         {/* New container to align content to the left and center it vertically */}
-        <div className="w-full text-left pl-10">
+        <motion.div
+          className="w-full text-left pl-10"
+          initial={{ opacity: 0, x: -100 }} // Initial state off-screen
+          whileInView={{ opacity: 1, x: 0 }} // Animate when element comes into view
+          transition={{ duration: 1 }} // Duration of animation
+          viewport={{ once: true }} // Trigger once when it comes into the viewport
+        >
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Kandy, Sri Lanka</h2>
           <p className="text-sm sm:text-base md:text-base mb-4">
             Kandy BTL's expansive outdoor advertising network covers a wide range of impactful platforms, including roadside billboards, bus shelter ads, roundabout and iconic locations branding, street marketing as well as underpass, overpass, and railway station advertising. Our reach extends into the heart of local communities and bustling high streets across Kandy, effectively engaging both local and foreign audiences alike. Whether it's tourism destinations or high-traffic urban areas, our strategic placements ensure maximum visibility as people move through the region.
@@ -29,15 +36,17 @@ const WorkWithUs = () => {
               Work With Us
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Right section with background image and black overlay */}
       <div
         className="w-full md:w-1/2 relative bg-cover bg-center h-[50vh] md:h-full"
-        style={{ backgroundImage: `url(${bgimage})`,
-        backgroundAttachment: "fixed",    
-        backgroundSize: "cover", }}
+        style={{
+          backgroundImage: `url(${bgimage})`,
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+        }}
       >
         {/* Black overlay */}
         <div className="absolute inset-0 bg-black opacity-80"></div>

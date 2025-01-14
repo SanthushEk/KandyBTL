@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
-import bgImage from "../../assets//outdorImg.jpg"; // Example background image
-
+import { motion } from "framer-motion"; // Import Framer Motion
+import bgImage from "../../assets/outdorImg.jpg"; // Example background image
 
 const Outdoor = () => {
   const outdoorItems = [
@@ -24,9 +24,14 @@ const Outdoor = () => {
 
   return (
     <div className="flex flex-col md:flex-row h-auto bg-primary font-poppins m-4">
-      {/* Left Section */}
-      <div className="w-full md:w-1/2 p-6 md:p-12">
-
+      {/* Left Section with Framer Motion */}
+      <motion.div
+        className="w-full md:w-1/2 p-6 md:p-12"
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-2xl md:text-3xl font-semibold mb-4">Outdoor Modules</h2>
         <p className="text-gray-700 mb-6">
           Boasting an extensive portfolio of over 175 advertising sites across road networks, railway stations, and public
@@ -37,12 +42,16 @@ const Outdoor = () => {
         <button className="px-6 py-3 bg-yellow text-white font-semibold rounded-lg hover:bg-yellow-600 transition-colors">
           Call to Action
         </button>
-      </div>
+      </motion.div>
 
-      {/* Right Section */}
-      <div
+      {/* Right Section with Framer Motion */}
+      <motion.div
         className="w-full md:w-1/2 h-auto p-6 md:p-12 bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgImage})` }}
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
         {/* Black overlay */}
         <div className="absolute inset-0 bg-black opacity-70 rounded-lg"></div>
@@ -59,7 +68,7 @@ const Outdoor = () => {
             ))}
           </ul>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

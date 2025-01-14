@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaBullhorn, FaRegHandPointRight, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion"; // Import Framer Motion
 import bgImage from "../../assets/OutdorBG.jpg"; // Replace with your actual background image path
 
 const items = [
@@ -46,57 +47,77 @@ const StreetPromo = () => {
   return (
     <div
       className="w-full h-auto bg-cover bg-center relative"
-      style={{ backgroundImage: `url(${bgImage})`,
-      backgroundAttachment: "fixed",    
-      backgroundSize: "cover", }}
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundAttachment: "fixed",
+        backgroundSize: "cover",
+      }}
     >
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black opacity-70"></div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto py-10 px-6 font-poppins text-center text-white">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6">
+        {/* Title with fade-in effect */}
+        <motion.h2
+          className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           Brand Activations & Street Promotions
-        </h2>
+        </motion.h2>
 
-        {/* Card Display */}
+        {/* Card Display with fade-in effect */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 m-8">
           {visibleItems.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className="p-6 rounded-lg shadow-lg text-white flex flex-col items-center border-2 border-yellow"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: index * 0.3 }} // Stagger delay for each card
             >
               <div className="text-4xl text-yellow mb-4">{item.icon}</div>
               <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
               <p className="text-sm">{item.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Navigation Buttons */}
+        {/* Navigation Buttons with fade-in effect */}
         <div className="flex justify-center space-x-4">
-          <button
+          <motion.button
             onClick={handlePrev}
             className="px-4 py-2 bg-yellow text-secondary rounded-full hover:bg-yellow-600 transition-colors"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
           >
             <FaArrowLeft />
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             onClick={handleNext}
             className="px-4 py-2 bg-yellow text-secondary rounded-full hover:bg-yellow-600 transition-colors"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
           >
             <FaArrowRight />
-          </button>
+          </motion.button>
         </div>
 
-        {/* Call to Action Button */}
-        <div className="mt-10">
-          <button
-            className="px-8 py-3 bg-yellow text-black rounded-full font-semibold text-lg hover:bg-yellow-600 transition-colors"
-          >
+        {/* Call to Action Button with fade-in effect */}
+        <motion.div
+          className="mt-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+        >
+          <button className="px-8 py-3 bg-yellow text-black rounded-full font-semibold text-lg hover:bg-yellow-600 transition-colors">
             Get Started Now
           </button>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

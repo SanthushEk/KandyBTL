@@ -7,6 +7,9 @@ import Discover from "./discover";
 import Outdoor from "./outdoor";
 import StreetPromo from "./StreetPromo";
 import Gallery from "./gallery";
+import Workshop from "./workshop";
+import Practices from "./practices";
+import Quote from "./quote";
 
 const Home = () => {
   return (
@@ -19,6 +22,9 @@ const Home = () => {
       <Outdoor/>
       <StreetPromo/>
       <Gallery/>
+      <Workshop/>
+      <Practices/>
+      <Quote/>
     </div>
   );
 };

@@ -8,6 +8,8 @@ import {
   FaCircle,
   FaStore,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Service = () => {
   const services = [
@@ -61,29 +63,43 @@ const Service = () => {
         Our Services
       </h2>
       <div className="flex flex-wrap justify-center gap-6">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="group relative text-center bg-white shadow-sm h-[22rem] w-[20rem] p-6 transition-all duration-500"
-          >
-            {/* Clipped Border by Default */}
-            <div className="absolute inset-0 border-2 border-gray-300 rounded-lg clip-corners transition-all duration-500 group-hover:border-yellow "></div>
+        {services.map((service, index) => {
+          const { ref, inView } = useInView({
+            triggerOnce: true, // Triggers only once when the element is in view
+            threshold: 0.5, // Element is considered in view when 50% is visible
+          });
 
-            <div className="relative z-10">
-              {/* Centered Icon */}
-              <div className="flex items-center justify-center text-5xl text-yellow mb-4 mx-auto group-hover:text-yellow-600 h-20">
-                {service.icon}
+          return (
+            <motion.div
+              key={index}
+              className="group relative text-center bg-white shadow-sm h-[22rem] w-[20rem] p-6 transition-all duration-500"
+              ref={ref}
+              initial={{ opacity: 0, y: 50 }} // Initial state: invisible and moved down
+              animate={{
+                opacity: inView ? 1 : 0, // Animate opacity based on inView status
+                y: inView ? 0 : 50, // Animate vertical position based on inView status
+              }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              {/* Clipped Border by Default */}
+              <div className="absolute inset-0 border-2 border-gray-300 rounded-lg clip-corners transition-all duration-500 group-hover:border-yellow "></div>
+
+              <div className="relative z-10">
+                {/* Centered Icon */}
+                <div className="flex items-center justify-center text-5xl text-yellow mb-4 mx-auto group-hover:text-yellow-600 h-20">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-semibold font-poppins mb-2 group-hover:text-yellow-600">
+                  {service.title}
+                </h3>
+                <hr className="w-16 border-t-2 border-yellow mx-auto mb-4 transition-all duration-500 group-hover:w-32" />
+                <p className="text-lg text-gray-700 group-hover:text-yellow-600 font-poppins">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold font-poppins mb-2 group-hover:text-yellow-600">
-                {service.title}
-              </h3>
-              <hr className="w-16 border-t-2 border-yellow mx-auto mb-4 transition-all duration-500 group-hover:w-32" />
-              <p className="text-lg text-gray-700 group-hover:text-yellow-600 font-poppins">
-                {service.description}
-              </p>
-            </div>
-          </div>
-        ))}
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

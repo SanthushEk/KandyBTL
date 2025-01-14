@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // Import Framer Motion
 
 import G1 from "../../assets/G1.jpg";
 import G2 from "../../assets/G2.jpg";
@@ -21,11 +22,21 @@ const Gallery = () => {
     <div className="container mx-auto py-10 px-6 font-poppins">
       <h2 className="text-3xl font-semibold text-center mb-2">Outdoor Advertising Hoardings & bus shelter ads</h2>
       <h2 className="text-xl font-semibold text-center mb-8">Kandy city and urban area</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      {/* Apply motion to the grid */}
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         {images.map((image) => (
-          <div
+          <motion.div
             key={image.id}
             className="relative group overflow-hidden rounded-lg shadow-lg border-2 border-transparent transition-colors duration-300 hover:border-yellow-500"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: image.id * 0.2 }} // Delay each card's animation
           >
             <img
               src={image.src}
@@ -34,16 +45,14 @@ const Gallery = () => {
             />
             {/* Main Card Hover Effect */}
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-lg font-semibold text-yellow" >{image.title}</h3>
+              <h3 className="text-lg font-semibold text-yellow">{image.title}</h3>
             </div>
 
-            {/* Smaller Inner Card */}
-            <div className="absolute inset-4 hover:border-2 hover:border-yellow rounded-lg">
-             
-            </div>
-          </div>
+            {/* Smaller Inner Card (Optional - if you want additional hover effects) */}
+            <div className="absolute inset-4 hover:border-2 hover:border-yellow rounded-lg"></div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
