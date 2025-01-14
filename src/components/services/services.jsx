@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "./sections/Title";
-import Events from "./sections/events";
+import Events from "./sections/Events";
 import Banner from "./sections/Banner";
 import Brands from "./sections/brands";
 import Sports from "./sections/Sports";
