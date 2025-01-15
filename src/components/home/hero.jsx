@@ -56,7 +56,7 @@ const Hero = () => {
       }}
     >
       {/* Black overlay */}
-      <div className="absolute inset-0 bg-black opacity-30"></div>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
 
       {/* Navigation arrows */}
       <button
