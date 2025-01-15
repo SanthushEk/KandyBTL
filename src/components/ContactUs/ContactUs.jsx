@@ -16,7 +16,7 @@ const ContactUs = () => {
 
   return (
     <div
-      className="relative bg-cover bg-center h-[100vh] flex flex-col justify-center items-center"
+      className="relative bg-cover bg-center h-[100vh] flex flex-col justify-center items-center font-futura"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundAttachment: "fixed",
@@ -101,8 +101,8 @@ const ContactUs = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.6 }}
       >
-        <div className="border-2 border-yellow p-6 rounded-lg shadow-md text-center bg-opacity-60 bg-secondary">
-          <h2 className="text-xl sm:text-2xl text-yellow font-semibold mb-2 font-futura">
+        <div className="border-2 border-yellow p-6 rounded-lg shadow-md text-center bg-opacity-60 font-futura bg-secondary">
+          <h2 className="text-xl sm:text-2xl text-yellow font-semibold mb-2 ">
             Opening Hours
           </h2>
           <p className="text-sm sm:text-base font-medium text-white mb-4">
