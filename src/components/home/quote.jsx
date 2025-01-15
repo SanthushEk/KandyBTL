@@ -10,7 +10,7 @@ const Quote = () => {
   };
 
   return (
-    <div className="w-full h-[40vh] flex flex-col justify-center items-center bg-primary text-center px-6">
+    <div className="w-full h-[40vh] flex flex-col justify-center font-futura items-center bg-primary text-center px-6">
       {/* Icon Animation */}
       <motion.div
         className="text-6xl text-yellow mb-4"
@@ -23,7 +23,7 @@ const Quote = () => {
 
       {/* Main Title Animation */}
       <motion.h2
-        className="text-3xl md:text-4xl font-semibold text-black mb-4 font-quoteFonts"
+        className="text-3xl md:text-4xl font-semibold text-black mb-4 "
         initial="hidden"
         whileInView="visible"
         variants={textVariants}
@@ -33,7 +33,7 @@ const Quote = () => {
 
       {/* Subtitle Animation */}
       <motion.h3
-        className="text-lg md:text-xl font-light text-black font-quoteFonts"
+        className="text-lg md:text-xl font-light text-black "
         initial="hidden"
         whileInView="visible"
         variants={textVariants}
@@ -44,7 +44,7 @@ const Quote = () => {
 
       {/* Description Animation */}
       <motion.p
-        className="text-sm md:text-base font-light text-black mt-4 font-poppins"
+        className="text-xl md:text-2xl font-light text-black mt-4 font-poppins"
         initial="hidden"
         whileInView="visible"
         variants={textVariants}

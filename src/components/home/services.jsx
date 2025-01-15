@@ -59,7 +59,7 @@ const Service = () => {
 
   return (
     <div className="py-20 px-5 sm:px-10 bg-gray-50">
-      <h2 className="text-4xl font-semibold text-center mb-12 font-poppins">
+      <h2 className="text-4xl font-semibold text-center mb-12 font-futura">
         Our Services
       </h2>
       <div className="flex flex-wrap justify-center gap-6">
@@ -89,11 +89,11 @@ const Service = () => {
                 <div className="flex items-center justify-center text-5xl text-yellow mb-4 mx-auto group-hover:text-yellow-600 h-20">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold font-poppins mb-2 group-hover:text-yellow-600">
+                <h3 className="text-xl font-semibold font-futura mb-2 group-hover:text-yellow-600">
                   {service.title}
                 </h3>
                 <hr className="w-16 border-t-2 border-yellow mx-auto mb-4 transition-all duration-500 group-hover:w-32" />
-                <p className="text-lg text-gray-700 group-hover:text-yellow-600 font-poppins">
+                <p className="text-lg text-gray-700 group-hover:text-yellow-600 font-futura">
                   {service.description}
                 </p>
               </div>

@@ -15,7 +15,7 @@ const WorkWithUs = () => {
   return (
     <div className="flex flex-col md:flex-row h-auto md:h-[70vh] m-4">
       {/* Left section with bg-primary */}
-      <div className="w-full md:w-1/2 bg-primary flex items-center font-poppins">
+      <div className="w-full md:w-1/2 bg-primary flex items-center font-futura">
         {/* New container to align content to the left and center it vertically */}
         <motion.div
           className="w-full text-left pl-10"
@@ -54,7 +54,7 @@ const WorkWithUs = () => {
         {/* Cards grid centered in the background */}
         <div
           ref={ref}
-          className="p-5 absolute inset-0 flex justify-center items-center font-poppins"
+          className="p-5 absolute inset-0 flex justify-center items-center font-futura"
         >
           <div className="grid grid-cols-2 gap-6 w-[500px] md:w-[600px]">
             {/* Card 1 */}

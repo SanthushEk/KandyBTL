@@ -57,7 +57,7 @@ const StreetPromo = () => {
       <div className="absolute inset-0 bg-black opacity-70"></div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto py-10 px-6 font-poppins text-center text-white">
+      <div className="relative z-10 container mx-auto py-10 px-6 font-futura text-center text-white">
         {/* Title with fade-in effect */}
         <motion.h2
           className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6"

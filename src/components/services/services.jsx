@@ -12,7 +12,7 @@ import Quote from "./sections/Quote";
 
 const services = () => {
   return (
-    <div>
+    <div className="font-futura">
       <Title/>
       <Events/>
       <Banner/>

@@ -9,15 +9,15 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-footer text-white py-10 px-5 font-poppins">
+    <footer className="bg-footer text-white py-10 px-5 font-futura">
       {/* Grid Layout with 4 Sections */}
       <div className="container mx-auto mb-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* KANDY BTL Section */}
         <div>
-          <h2 className="text-2xl font-semibold">
+          <h2 className="text-2xl font-bold">
             KANDY <span className="text-yellow">BTL</span>
           </h2>
-          <p className="mt-4 text-sm">
+          <p className="mt-4 text-base font-bold">
             The <span className="text-yellow">Living Room</span> changed and our{" "}
             <span className="text-yellow">Commute</span> stopped following
             patterns and set transport choices. <span className="text-yellow">Personas</span> are outdated.
@@ -35,7 +35,7 @@ const Footer = () => {
 
         {/* Quick Links Section */}
         <div className="ml-0 md:ml-20">
-          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+          <h3 className="text-xl font-bold mb-4">Quick Links</h3>
           <ul>
             <li>
               <a href="/" className="hover:underline">
@@ -57,7 +57,7 @@ const Footer = () => {
 
         {/* City Office Section */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">City Office</h3>
+          <h3 className="text-xl font-bold mb-4">City Office</h3>
           <p>
             94, Captain's Square, Rajapihilla Mw,
             <br />
@@ -67,7 +67,7 @@ const Footer = () => {
 
         {/* Our Locations Section with Social Media Icons */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Our Locations</h3>
+          <h3 className="text-xl font-bold mb-4">Our Locations</h3>
           <ul>
             <li>Studio Complex in Pallekele</li>
             <li>Activation House - Aniwatthe</li>

@@ -73,7 +73,7 @@ const Discover = () => {
       </div>
 
       {/* Right Section with Motion Frame */}
-      <div className="w-full md:w-1/2 h-full p-4 md:p-20 flex flex-col justify-center font-poppins">
+      <div className="w-full md:w-1/2 h-full p-4 md:p-20 flex flex-col justify-center font-futura">
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}

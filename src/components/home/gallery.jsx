@@ -19,7 +19,7 @@ const images = [
 
 const Gallery = () => {
   return (
-    <div className="container mx-auto py-10 px-6 font-poppins">
+    <div className="container mx-auto py-10 px-6 font-futura">
       <h2 className="text-3xl font-semibold text-center mb-2">Outdoor Advertising Hoardings & bus shelter ads</h2>
       <h2 className="text-xl font-semibold text-center mb-8">Kandy city and urban area</h2>
 

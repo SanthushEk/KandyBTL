@@ -8,7 +8,7 @@ const Workshop = () => {
     <div className="h-auto bg-primary w-full flex flex-col md:flex-row">
       {/* Left Section with Animation */}
       <motion.div
-        className="w-full md:w-1/2 p-6 flex flex-col justify-center items-center text-center text-secondary font-poppins"
+        className="w-full md:w-1/2 p-6 flex flex-col justify-center items-center text-center text-secondary font-futura"
         initial={{ opacity: 0, x: -300 }} // Start from left side
         whileInView={{ opacity: 1, x: 0 }} // Move to original position
         transition={{ duration: 0.8 }}

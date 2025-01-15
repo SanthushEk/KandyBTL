@@ -48,7 +48,7 @@ const Navbar = () => {
   return (
     <>
       {/* Top Bar with Address, Phone, Email, and Social Media */}
-      <div className="bg-white text-secondary py-2 font-montserrat font-medium hidden md:block">
+      <div className="bg-white text-secondary py-2 font-futura font-bold hidden md:block">
         <div className="container mx-auto flex justify-between items-center text-sm">
           {/* Left Section */}
           <div className="flex space-x-4">
@@ -116,7 +116,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <nav className="flex justify-between items-center p-4 bg-navbar text-primary font-poppins font-medium">
+      <nav className="flex justify-between items-center p-4 bg-navbar text-primary font-futura font-bold">
         {/* Left: Hamburger Menu (Mobile) */}
         <div className="md:hidden">
           <button
@@ -251,25 +251,25 @@ const Navbar = () => {
 
       {/* Mobile Menu (Toggle this when Hamburger is clicked) */}
       {isMobileMenuOpen && (
-        <div className="flex flex-col space-y-4 p-4 bg-primary text-secondary md:hidden">
+        <div className="flex flex-col space-y-4 p-4 bg-primary text-secondary font-futura md:hidden">
           <Link
             to="/"
             onClick={() => handleNavItemClick("home")}
-            className="text-xl font-medium text-secondary"
+            className="text-xl font-bold text-secondary"
           >
             Home
           </Link>
           <Link
             to="/service"
             onClick={() => handleNavItemClick("services")}
-            className="text-xl font-medium text-secondary"
+            className="text-xl font-bold text-secondary"
           >
             Services
           </Link>
           <Link
             to="/contactus"
             onClick={() => handleNavItemClick("contactus")}
-            className="text-xl font-medium text-secondary"
+            className="text-xl font-bold text-secondary"
           >
             Contact Us
           </Link>

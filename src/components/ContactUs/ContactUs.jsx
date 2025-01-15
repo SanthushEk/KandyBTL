@@ -102,7 +102,7 @@ const ContactUs = () => {
         transition={{ duration: 1, delay: 0.6 }}
       >
         <div className="border-2 border-yellow p-6 rounded-lg shadow-md text-center bg-opacity-60 bg-secondary">
-          <h2 className="text-xl sm:text-2xl text-yellow font-semibold mb-2 font-quoteFonts">
+          <h2 className="text-xl sm:text-2xl text-yellow font-semibold mb-2 font-futura">
             Opening Hours
           </h2>
           <p className="text-sm sm:text-base font-medium text-white mb-4">

@@ -24,7 +24,7 @@ const Numbers = () => {
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Content */}
-      <div ref={ref} className="relative z-10 container mx-auto py-10 px-6 font-poppins">
+      <div ref={ref} className="relative z-10 container mx-auto py-10 px-6 font-futura">
         <h2 className="text-2xl sm:text-3xl md:text-4xl text-center font-semibold text-white mb-8">
           Numbers Speak
         </h2>

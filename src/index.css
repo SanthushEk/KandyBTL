@@ -14,7 +14,12 @@
       );
     }
   }
-
+  @font-face {
+    font-family: 'Futura';
+    src: url('./assets/fonts/futura-light-bt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
  /* Custom scrollbar styles */
 @layer base {
   html, body {

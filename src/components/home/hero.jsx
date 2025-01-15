@@ -48,7 +48,7 @@ const Hero = () => {
 
   return (
     <div
-      className="h-[80vh] bg-cover bg-center relative transition-all duration-1000 flex items-center justify-center"
+      className="h-[80vh] bg-cover bg-center relative transition-all duration-1000 flex items-center justify-center font-futura"
       style={{
         backgroundImage: `url(${image})`,
         backgroundAttachment: "fixed",
@@ -76,7 +76,7 @@ const Hero = () => {
       <div className="relative text-center z-10 px-5 sm:px-10">
         {/* Title */}
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-6xl font-semibold font-quoteFonts mb-4 flex justify-center items-center text-white"
+          className="text-3xl sm:text-4xl md:text-6xl font-bold font-futura mb-4 flex justify-center items-center text-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
@@ -88,7 +88,7 @@ const Hero = () => {
 
         {/* Subtitle */}
         <motion.p
-          className="text-xl sm:text-3xl mb-4 font-poppins font-medium text-white"
+          className="text-xl sm:text-3xl mb-4 font-bold  text-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -98,7 +98,7 @@ const Hero = () => {
 
         {/* Description */}
         <motion.p
-          className="px-10 md:px-40 text-base sm:text-lg md:text-lg font-poppins mb-16 text-white font-medium"
+          className="px-10 md:px-40 text-lg sm:text-xl md:text-xl  mb-16 text-white font-bold"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.7 }}

@@ -23,7 +23,7 @@ const Outdoor = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row h-auto bg-primary font-poppins m-4">
+    <div className="flex flex-col md:flex-row h-auto bg-primary font-futura m-4">
       {/* Left Section with Framer Motion */}
       <motion.div
         className="w-full md:w-1/2 p-6 md:p-12"
@@ -57,7 +57,7 @@ const Outdoor = () => {
         <div className="absolute inset-0 bg-black opacity-70 rounded-lg"></div>
 
         {/* Content */}
-        <div className="relative z-10 text-white font-poppins">
+        <div className="relative z-10 text-white font-futura">
           <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-yellow">Our Offerings</h3>
           <ul className="grid grid-cols-2 gap-4 text-lg">
             {outdoorItems.map((item, index) => (

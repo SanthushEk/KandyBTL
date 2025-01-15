@@ -20,7 +20,7 @@ const Practices = () => {
         {/* Black Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
-        <div className="relative z-10 p-6">
+        <div className="relative z-10 p-6 font-futura">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Sustainability Projects in Central Province
           </h2>
@@ -65,7 +65,7 @@ const Practices = () => {
 
       {/* Right Section with Animation */}
       <motion.div
-        className="w-full md:w-1/2 flex flex-col justify-center items-center space-y-4 font-poppins py-5"
+        className="w-full md:w-1/2 flex flex-col justify-center items-center space-y-4 font-futura py-5"
         initial={{ opacity: 0 }} // Start with 0 opacity
         whileInView={{ opacity: 1 }} // Fade in to full opacity when in view
         transition={{ duration: 0.8 }} // Duration of the fade-in effect
