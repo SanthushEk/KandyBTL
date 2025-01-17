@@ -1,167 +1,130 @@
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import React from "react";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa6"; // Corrected import for Twitter
+import bgImage from "../../../assets/Images/contactbg.jpg";
 import { motion } from "framer-motion";
-import "swiper/css";
-
-// Import images
-import bgImage1 from "../../../assets/Images/contactbg.jpg";
-import bgImage2 from "../../../assets/Images/bg_image.jpg";
 
 const Hero = () => {
-  const swiperRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0); // Track the active slide index
-
-  const slides = [
-    {
-      bgImage: bgImage1,
-      title: "Out-of-Home Advertising",
-      subtitle: "Driving Brand Visibility in Kandy",
-      description: `Kandy BTL is a premier outdoor advertising company in Kandy, 
-        offering a vast and diverse portfolio that includes railway stations ads, 
-        roadside hoardings, roundabout branding, and bus shelter advertisements. 
-        Our reach extends further with branding on transport networks, covering 
-        SLTB buses, private coaches, and app-based tuk-tuk branding.`,
-    },
-    {
-      bgImage: bgImage2,
-      title: "Out-of-Home Advertising",
-      subtitle: "Kandy BTL’s Diverse Outdoor Advertising Solutions",
-      description: `We specialize in seamlessly integrating traditional outdoor 
-        advertising with advanced digital strategies, utilizing CGI marketing, 
-        AI-driven productions, and the latest innovations from industry leaders 
-        like Meta and ByteDance. Our holistic approach delivers a powerful, 
-        one-stop solution that ensures brands, clients, and agencies achieve 
-        maximum visibility and engagement across both physical and digital landscapes.`,
-    },
-  ];
-
-  const handlePrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
-  };
-
-  const handleNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
-  };
-
   return (
-    <div className="relative w-full h-[80vh] font-futura">
-      <Swiper
-        modules={[Autoplay]}
-        autoplay={{ delay: 5000 }}
-        loop
-        className="h-[80vh]"
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index} className="relative">
-            <div
-              className="relative h-[80vh] flex items-center justify-center"
-              style={{
-                backgroundImage: `url(${slide.bgImage})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="absolute inset-0 bg-secondary bg-opacity-50 z-0"></div>
-              <motion.div
-                className="relative z-10 text-center text-white p-6 max-w-5xl"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{
-                  opacity: [0, 1, 1, 0], // Fade in, stay, and fade out
-                  y: [50, 0, 0, 50], // Slide in, stay, and slide out
-                }}
-                transition={{
-                  duration: 4, // Matches slide delay (5000ms)
-                  times: [0, 0.25, 0.75, 1], // Keyframe percentages
-                  repeat: Infinity, // Infinite loop
-                }}
+    <section
+      className="relative bg-cover bg-center bg-no-repeat font-futura"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundAttachment: "fixed",
+        backgroundSize: "cover",
+      }}
+    >
+      {/* Black Overlay */}
+      <div className="absolute inset-0 bg-secondary opacity-50 z-0"></div>
+
+      {/* Content */}
+      <div className="relative mx-auto max-w-screen-2xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8 z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="max-w-xl text-center sm:text-left"
+          >
+            <h1 className="text-3xl font-extrabold sm:text-8xl text-white">
+              Out-of-Home
+              <strong className="block font-extrabold text-yellow tracking-wider">
+                Advertising
+              </strong>
+            </h1>
+
+            <p className="mt-4 max-w-lg sm:text-xl tracking-wider text-white font-bold">
+              Driving Brand Visibility in Kandy.
+            </p>
+            <p className="max-w-lg sm:text-xl tracking-wider text-white font-bold">
+              Kandy BTL’s Diverse Outdoor Advertising Solutions
+            </p>
+
+            <div className="mt-8 flex justify-center md:justify-start w-full text-center">
+              <a
+                href="#"
+                className="block w-1/2 md:w-1/2 rounded-lg bg-yellow px-12 py-4 text-sm font-semibold text-Secondary shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto sm:text-lg sm:px-12 sm:py-4"
               >
-                <motion.h2
-                  className="text-2xl md:text-6xl font-bold tracking-wider flex items-center justify-center"
-                  animate={{
-                    opacity: [0, 1, 1, 0], // Same keyframes as parent
-                  }}
-                  transition={{
-                    duration: 4,
-                    times: [0, 0.25, 0.75, 1],
-                    repeat: Infinity,
-                  }}
-                >
-                  <span className="w-10 h-1 bg-yellow mr-3"></span>
-                  {slide.title}
-                  <span className="w-10 h-1 bg-yellow ml-3"></span>
-                </motion.h2>
-                <motion.h3
-                  className="text-xl md:text-3xl tracking-wide text-yellow font-medium mt-2 mb-4"
-                  animate={{
-                    opacity: [0, 1, 1, 0],
-                  }}
-                  transition={{
-                    duration: 4,
-                    times: [0, 0.25, 0.75, 1],
-                    repeat: Infinity,
-                  }}
-                >
-                  {slide.subtitle}
-                </motion.h3>
-                <motion.p
-                  className="text-base md:text-xl mb-16 font-medium"
-                  animate={{
-                    opacity: [0, 1, 1, 0],
-                  }}
-                  transition={{
-                    duration: 4,
-                    times: [0, 0.25, 0.75, 1],
-                    repeat: Infinity,
-                  }}
-                >
-                  {slide.description}
-                </motion.p>
-                <motion.button
-                  className="bg-yellow hover:bg-yellow text-secondary px-6 py-2 rounded-md text-lg font-bold"
-                  animate={{
-                    opacity: [0, 1, 1, 0],
-                  }}
-                  transition={{
-                    duration: 4,
-                    times: [0, 0.25, 0.75, 1],
-                    repeat: Infinity,
-                  }}
-                  onClick={() => window.open("https://wa.me/", "_blank")}
-                >
-                  WhatsApp Us
-                </motion.button>
-              </motion.div>
-              <div className="absolute inset-y-0 left-4 hidden md:flex items-center justify-center z-10">
-                <button
-                  className="text-white rounded-full p-3 hover:bg-opacity-75"
-                  onClick={handlePrev}
-                >
-                  <FaArrowLeft size={20} />
-                </button>
-              </div>
-              <div className="absolute inset-y-0 right-4 hidden md:flex items-center justify-center z-10">
-                <button
-                  className="text-white rounded-full p-3 hover:bg-opacity-75"
-                  onClick={handleNext}
-                >
-                  <FaArrowRight size={20} />
-                </button>
-              </div>
+                WhatsApp Us
+              </a>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+          </motion.div>
+
+          {/* Description on the right */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 mr-10 text-white max-w-lg hidden md:block"
+          >
+            <p className="text-lg sm:text-xl">
+              <span className="text-yellow">Kandy BTL</span> is a premier
+              outdoor advertising company in Kandy, offering a vast and diverse
+              portfolio that includes{" "}
+              <span className="text-yellow">railway stations ads</span>,{" "}
+              <span className="text-yellow">roadside hoardings</span>,{" "}
+              <span className="text-yellow">roundabout branding</span>, and{" "}
+              <span className="text-yellow">bus shelter advertisements</span>.
+              Our reach extends further with branding on transport networks,
+              covering <span className="text-yellow">SLTB buses</span>, private
+              coaches, and app-based tuk-tuk branding.
+            </p>
+            <p className="text-lg sm:text-xl mt-2">
+              We specialize in seamlessly integrating traditional outdoor
+              advertising with advanced digital strategies, utilizing{" "}
+              <span className="text-yellow">CGI marketing</span>,{" "}
+              <span className="text-yellow-500">AI-driven productions</span>,
+              and the latest innovations from industry leaders like{" "}
+              <span className="text-yellow">Meta</span> and{" "}
+              <span className="text-yellow">ByteDance</span>. Our holistic
+              approach delivers a powerful, one-stop solution that ensures
+              brands, clients, and agencies achieve maximum visibility and
+              engagement across both{" "}
+              <span className="text-yellow">physical</span> and{" "}
+              <span className="text-yellow">digital</span> landscapes.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Social Icons */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-4 ">
+        <ul className="flex gap-4">
+          <motion.li
+            className="flex justify-center items-center p-2 text-yellow text-2xl md:text-4xl "
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <FaFacebook />
+          </motion.li>
+          <motion.li
+            className="flex justify-center items-center p-2 text-yellow text-2xl md:text-4xl "
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            <FaInstagram />
+          </motion.li>
+          <motion.li
+            className="flex justify-center items-center p-2 text-yellow text-2xl md:text-4xl "
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
+            <FaWhatsapp />
+          </motion.li>
+          <motion.li
+            className="flex justify-center items-center p-2 text-yellow text-2xl md:text-4xl "
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
+            <FaTwitter />
+          </motion.li>
+        </ul>
+      </div>
+    </section>
   );
 };
 

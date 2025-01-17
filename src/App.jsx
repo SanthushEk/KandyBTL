@@ -5,22 +5,19 @@ import Footer from "./components/footer/footer";
 import Home from "./components/home/home";
 import BackToTopButton from './components/BackToTop/Btop';
 
-
-
-
 function App() {
   return (
     <Router>
-      <div className="app-container relative">
-      <Navbar/>
-      <div className="main-content">
-          <Routes>
+      <div className="app-container">
+        <div className="main-content">
+        <Navbar/> 
+          <Routes>           
             <Route path="/" element={<Home />} />
           </Routes>
         </div>
-      <Footer/>
+        <Footer />
 
-      <BackToTopButton/>
+        <BackToTopButton />
       </div>
     </Router>
   );

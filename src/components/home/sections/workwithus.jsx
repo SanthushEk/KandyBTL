@@ -13,7 +13,7 @@ const WorkWithUs = () => {
       <motion.div
         className="w-full lg:w-1/2 h-auto p-6 lg:p-12 bg-cover relative"
         style={{ backgroundImage: `url(${bgImage})` }}
-        initial={{ opacity: 0, x: isMobile ? -50 : -500 }}
+        initial={{ opacity: 0, x: isMobile ? -50 : -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
@@ -33,20 +33,20 @@ const WorkWithUs = () => {
           {/* Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-2 gap-6">
             <div className="p-6 rounded-xl text-center flex flex-col justify-center items-center border-2 border-yellow">
-              <FaLeaf className="text-yellow text-5xl mb-4" />
-              <h4 className="text-lg lg:text-lg font-semibold">Sustainability</h4>
+              <FaLeaf className="text-yellow text-2xl md:text-5xl mb-4" />
+              <h4 className="text-sm lg:text-lg font-semibold">Sustainability</h4>
             </div>
             <div className="p-6 rounded-xl text-center flex flex-col justify-center items-center border-2 border-yellow">
-              <FaClock className="text-yellow text-5xl mb-4" />
-              <h4 className="text-lg lg:text-lg font-semibold">Project On Time</h4>
+              <FaClock className="text-yellow text-2xl md:text-5xl mb-4" />
+              <h4 className="text-sm lg:text-lg font-semibold">Project On Time</h4>
             </div>
             <div className="p-6 rounded-xl text-center flex flex-col justify-center items-center border-2 border-yellow">
-              <FaDesktop className="text-yellow text-5xl mb-4" />
-              <h4 className="text-lg lg:text-lg font-semibold">Modern Technology</h4>
+              <FaDesktop className="text-yellow text-2xl md:text-5xl mb-4" />
+              <h4 className="text-sm lg:text-lg font-semibold">Modern Technology</h4>
             </div>
             <div className="p-6 rounded-xl text-center flex flex-col justify-center items-center border-2 border-yellow">
-              <FaLightbulb className="text-yellow text-5xl mb-4" />
-              <h4 className="text-lg lg:text-lg font-semibold">Creative Concepts</h4>
+              <FaLightbulb className="text-yellow text-2xl md:text-5xl mb-4" />
+              <h4 className="text-sm lg:text-lg font-semibold">Creative Concepts</h4>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ const WorkWithUs = () => {
       {/* Right Section */}
       <motion.div
         className="w-full lg:w-1/2 h-full p-10 lg:pr-36 relative"
-        initial={{ opacity: 0, x: isMobile ? 50 : 500 }}
+        initial={{ opacity: 0, x: isMobile ? 50 : 100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}

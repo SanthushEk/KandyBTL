@@ -5,9 +5,7 @@ import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
-  FaTwitter,
 } from "react-icons/fa";
-import { BsFillCaretDownFill } from "react-icons/bs";
 import { FiAlignJustify, FiMoreVertical } from "react-icons/fi";
 import { FiArrowRight } from "react-icons/fi";
 import { AiOutlineMail } from "react-icons/ai"; // For email icon
