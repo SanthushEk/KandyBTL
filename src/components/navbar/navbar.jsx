@@ -11,7 +11,6 @@ import { FiArrowRight } from "react-icons/fi";
 import { AiOutlineMail } from "react-icons/ai"; // For email icon
 import { IoLocationSharp, IoCallSharp, IoTimeOutline } from "react-icons/io5"; // For location and call icons
 import { FaSquareXTwitter } from "react-icons/fa6";
-import logo from "../../assets/Images/logo.jpg"; // Import logo image (if it's inside src folder)
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);

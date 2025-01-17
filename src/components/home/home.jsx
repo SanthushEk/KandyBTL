@@ -9,8 +9,6 @@ import Brands from "./sections/brands";
 import Banner from "./sections/banner";
 
 
-
-
 const Home = () => {
   return (
     <div>

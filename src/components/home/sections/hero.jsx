@@ -26,7 +26,7 @@ const Hero = () => {
             transition={{ duration: 1 }}
             className="max-w-xl text-center sm:text-left"
           >
-            <h1 className="text-3xl font-extrabold sm:text-8xl text-white">
+            <h1 className="text-3xl font-extrabold sm:text-6xl text-white">
               Out-of-Home
               <strong className="block font-extrabold text-yellow tracking-wider">
                 Advertising
