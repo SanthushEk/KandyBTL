@@ -20,10 +20,10 @@ const Banner = () => {
         <div className="absolute inset-0 bg-secondary opacity-90 rounded-lg"></div>
 
         {/* New Card with List and Icons in Grid */}
-        <div className="relative z-10 text-white font-futura border-2 border-gray-500 p-10 rounded-sm mb-6 h-full">
+        <div className="relative z-10 text-white font-futura tracking-wider border-2 border-gray-500 p-10 rounded-sm mb-6 h-full">
           <div>
             {/* New Card with List and Icons in Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Card 1 */}
               <div className="p-6 rounded-xl text-center flex flex-col justify-center items-center ">
                 <FaRoad className="text-yellow text-3xl sm:text-4xl mb-4" />

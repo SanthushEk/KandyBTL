@@ -32,7 +32,7 @@ const WorkWithUs = () => {
               Brand positioning through Public Private Partnership Programmes
             </h2>
             {/* List Section */}
-            <ul className="space-y-4">
+            <ul className="space-y-5">
               <li className="flex items-center space-x-3 ">
                 <FaLeaf className="text-xl md:text-4xl text-yellow" />
                 <div>
