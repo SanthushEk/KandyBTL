@@ -62,13 +62,13 @@ const Modules = () => {
 
         <div className="relative z-10 text-white font-futura border-2 border-gray-500 p-5 md:p-14 rounded-sm mb-6">
           <h3 className="text-xl md:text-2xl font-semibold mb-4">Outdoor Modules</h3>
-          <p className="mb-6 text-base">
+          <p className="mb-6 text-sm md:text-base">
             Boasting an extensive portfolio of over 175 advertising sites across road networks, railway stations, and public locations, our outdoor inventory effectively reaches 95% of the population in the Kandy district. This unparalleled coverage ensures that your message resonates with a wide audience, maximizing visibility and engagement throughout the region.
           </p>
           <button className="px-6 py-3 bg-yellow text-secondary font-semibold rounded-lg hover:bg-yellow-600 transition-colors mb-6">
             Call To Actions
           </button>
-          <ul className="grid grid-cols-2 gap-4 text-base mb-4 md:mb-10">
+          <ul className="grid grid-cols-2 gap-4 text-sm md:text-base mb-4 md:mb-10">
             {outdoorItems.map((item, index) => (
               <li key={index} className="flex items-center">
                 <FaCheck className="mr-2 text-yellow " />

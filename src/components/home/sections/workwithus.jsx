@@ -33,7 +33,7 @@ const WorkWithUs = () => {
             </h2>
             {/* List Section */}
             <ul className="space-y-5">
-              <li className="flex items-center space-x-3 ">
+              <li className="flex items-center space-x-5 ">
                 <FaLeaf className="text-xl md:text-4xl text-yellow" />
                 <div>
                   <h3 className="text-xl md:text-2xl tracking-wide font-semibold">
