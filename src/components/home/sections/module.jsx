@@ -24,10 +24,10 @@ const Modules = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row h-auto bg-primary font-futura m-4">
+    <div className="flex flex-col p-4 md:flex-row h-auto bg-primary font-futura ">
       {/* Left Section with Card */}
       <motion.div
-        className="w-full md:w-1/2 p-6 flex flex-col justify-center lg:pl-14 mb-10 lg:mb-0"
+        className="w-full md:w-1/2 flex flex-col justify-center lg:pl-14 m-5 lg:mb-0"
         initial={{ x: "-100%" }} // Start from the left
         whileInView={{ x: 0 }} // Animate to the center
         transition={{ type: "spring", stiffness: 100, damping: 25 }}

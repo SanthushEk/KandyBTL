@@ -43,7 +43,7 @@ const Hero = () => {
             <div className="mt-8 flex justify-center md:justify-start w-full text-center">
               <a
                 href="#"
-                className="block w-1/2 md:w-1/2 rounded-lg bg-yellow px-12 py-4 text-sm font-semibold text-Secondary shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto sm:text-lg sm:px-12 sm:py-4"
+                className="block w-1/2 md:w-1/2 rounded-lg bg-yellow px-12 py-4 text-base font-semibold text-Secondary shadow sm:w-auto sm:text-lg sm:px-12 sm:py-4"
               >
                 WhatsApp Us
               </a>
