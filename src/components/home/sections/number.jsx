@@ -3,7 +3,7 @@ import { FaBusinessTime, FaBullhorn, FaRecycle, FaHandsHelping, FaPaintBrush, Fa
 import { useInView } from "react-intersection-observer"; // For scroll detection
 import { motion } from "framer-motion"; // Framer Motion
 import CountUp from "react-countup"; // For number animation
-import bgImage from "../../../assets/Images/image3.jpg"; // Replace with your actual background image path
+import bgImage from "../../../assets/Images/numbersBG.jpg"; // Replace with your actual background image path
 
 const Numbers = () => {
   const [hasAnimated, setHasAnimated] = useState(false); // Track animation state
@@ -94,7 +94,7 @@ const Numbers = () => {
       }}
     >
       {/* Black overlay */}
-      <div className="absolute inset-0 bg-secondary opacity-60"></div>
+      <div className="absolute inset-0 bg-secondary opacity-80"></div>
 
       {/* Content */}
       <div

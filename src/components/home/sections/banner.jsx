@@ -111,7 +111,7 @@ const Banner = () => {
           </p>
 
           {/* Quote */}
-          <div className="mt-10 text-center text-Secondary text-3xl font-semibold">
+          <div className="mt-10 text-center text-Secondary tracking-wide text-xl md:text-3xl font-semibold">
             <p>
               TOWARDS A PLASTIC FREE & SMART CITY CONCEPT
               <br />
