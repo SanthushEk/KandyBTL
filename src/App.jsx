@@ -5,6 +5,7 @@ import Footer from "./components/footer/footer";
 import Home from "./components/home/home";
 import BackToTopButton from "./components/BackToTop/Btop";
 import Service from "./components/services/services";
+import ContactUs from "./components/ContactUs/ContactUs";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/service" element={<Service/>} />
-            
+            <Route path="/contact" element={<ContactUs/>} />            
           </Routes>
         </div>
         <Footer />

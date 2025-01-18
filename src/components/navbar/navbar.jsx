@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import {
-  FaSearch,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaSearch, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FiAlignJustify, FiMoreVertical } from "react-icons/fi";
 import { FiArrowRight } from "react-icons/fi";
 import { AiOutlineMail } from "react-icons/ai"; // For email icon
 import { IoLocationSharp, IoCallSharp, IoTimeOutline } from "react-icons/io5"; // For location and call icons
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaHome, FaCog, FaEnvelope } from "react-icons/fa";
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -39,7 +35,8 @@ const Navbar = () => {
   };
 
   const handleNavItemClick = (item) => {
-    setActiveItem(item); // Set the active item when clicked
+    setActiveItem(item);
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -130,7 +127,7 @@ const Navbar = () => {
               />
             ) : (
               <FiAlignJustify
-                size={24}
+                size={32}
                 className="transition-transform transform"
               />
             )}
@@ -139,7 +136,9 @@ const Navbar = () => {
 
         {/* Left: Logo */}
         <div className="flex items-center space-x-2 flex-grow md:flex-none justify-start md:justify-center">
-          <h1 className="text-xl font-sans pl-4">Kandy<span className="text-yellow">BTL</span></h1>
+          <h1 className="text-xl font-sans pl-4">
+            Kandy<span className="text-yellow">BTL</span>
+          </h1>
         </div>
 
         {/* Center: Navbar Menu (Hidden on Mobile) */}
@@ -168,7 +167,7 @@ const Navbar = () => {
 
           {/* Contact Us */}
           <Link
-            to="/contactus"
+            to="/contact"
             onClick={() => handleNavItemClick("contact")}
             className={`cursor-pointer hover:text-yellow transition-all duration-300 ease-in-out ${
               activeItem === "contact" ? "text-yellow" : ""
@@ -179,9 +178,9 @@ const Navbar = () => {
         </div>
 
         {/* Right: Search Bar and More (Mobile) */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 ">
           {/* Search Bar - Only show icon initially, input shows when clicked */}
-          <div className="relative flex items-center">
+          <div className="relative items-center hidden md:block">
             <input
               type="text"
               placeholder="Search"
@@ -210,7 +209,7 @@ const Navbar = () => {
 
             {/* More Menu Content */}
             {isMoreMenuOpen && (
-              <div className="absolute top-20 right-0 w-full bg-primary text-secondary p-4 shadow-lg z-50">
+              <div className="absolute top-20 right-0 w-full bg-primary text-secondary p-4 shadow-lg z-50 tracking-wider">
                 <div className="space-y-4">
                   {/* Address Section */}
                   <div className="flex items-center space-x-2">
@@ -219,7 +218,6 @@ const Navbar = () => {
                       93, Captain's Deck, Rajapihilla Mw, Kandy 20000
                     </span>
                   </div>
-
                   {/* Phone Number Section */}
                   <div className="flex items-center space-x-2">
                     <IoCallSharp size={20} className="text-yellow" />
@@ -248,28 +246,41 @@ const Navbar = () => {
 
       {/* Mobile Menu (Toggle this when Hamburger is clicked) */}
       {isMobileMenuOpen && (
-        <div className="flex flex-col space-y-4 p-4 bg-primary text-secondary font-futura md:hidden">
-          <Link
-            to="/"
-            onClick={() => handleNavItemClick("home")}
-            className="text-xl font-bold text-secondary"
-          >
-            Home
-          </Link>
-          <Link
-            to="/service"
-            onClick={() => handleNavItemClick("services")}
-            className="text-xl font-bold text-secondary"
-          >
-            Services
-          </Link>
-          <Link
-            to="/contactus"
-            onClick={() => handleNavItemClick("contactus")}
-            className="text-xl font-bold text-secondary"
-          >
-            Contact Us
-          </Link>
+        <div className="flex flex-col space-y-4 p-4 bg-primary text-secondary font-futura md:hidden z-50">
+          <div className="flex flex-col items-start space-y-2">
+            <div className="flex items-center space-x-5 w-full hover:bg-yellow rounded-md hover:px-4 py-2 transition-all duration-300">
+              <FaHome className="text-2xl hover:text-highlight transition-all duration-300" />
+              <Link
+                to="/"
+                onClick={() => handleNavItemClick("home")}
+                className="text-xl font-bold text-secondary hover:text-highlight transition-all duration-300"
+              >
+                Home
+              </Link>
+            </div>
+
+            <div className="flex items-center space-x-5 w-full hover:bg-yellow rounded-md hover:px-4 py-2 transition-all duration-300">
+              <FaCog className="text-2xl hover:text-highlight  transition-all duration-300" />
+              <Link
+                to="/service"
+                onClick={() => handleNavItemClick("services")}
+                className="text-xl font-bold text-secondary hover:text-highlight transition-all duration-300"
+              >
+                Services
+              </Link>
+            </div>
+
+            <div className="flex items-center space-x-5 w-full hover:bg-yellow hover:px-4 py-2 rounded-md transition-all duration-300">
+              <FaEnvelope className="text-2xl hover:text-highlight transition-all duration-300" />
+              <Link
+                to="/contact"
+                onClick={() => handleNavItemClick("contactus")}
+                className="text-xl font-bold text-secondary hover:text-highlight transition-all duration-300"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </>

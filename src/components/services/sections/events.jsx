@@ -37,13 +37,8 @@ const Events = () => {
       <motion.div
         className="w-full md:w-1/2 h-auto p-6 md:p-10 relative"
         style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
-        initial={{ opacity: 0, x: -100 }} // Start from the right
-        whileInView={{ opacity: 1, x: 0 }} // Animate to the center
-        exit={{ opacity: 0, x: 100 }} // Fade out when scrolling up
-        transition={{ duration: 1 }}
-        viewport={{ once: false }} // Trigger animation on both scroll directions
       >
-        <div className="absolute inset-0 bg-secondary opacity-50 rounded-lg"></div>
+        <div className="absolute inset-0 bg-secondary opacity-80 rounded-lg"></div>
 
         <div className="relative z-10 text-white font-futura border-2 border-gray-500 p-5 md:p-14 rounded-sm mb-6">
           <h3 className="text-xl md:text-2xl font-semibold mb-4">

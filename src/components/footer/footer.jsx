@@ -17,7 +17,7 @@ const Footer = () => {
           <h2 className="text-2xl font-bold">
             KANDY <span className="text-yellow">BTL</span>
           </h2>
-          <p className="mt-4 text-base font-bold">
+          <p className="mt-4 text-sm font-medium tracking-wider">
             The <span className="text-yellow">Living Room</span> changed and our{" "}
             <span className="text-yellow">Commute</span> stopped following
             patterns and set transport choices. <span className="text-yellow">Personas</span> are outdated.
