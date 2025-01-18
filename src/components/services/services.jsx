@@ -3,6 +3,9 @@ import Title from "./sections/Title";
 import Banner from "./sections/banner";
 import Events from "./sections/events";
 import Brands from "./sections/brands";
+import Others from "./sections/others";
+import Sports from "./sections/sports";
+import Quote from "./sections/Quote";
 
 const Service = () => {
   return (
@@ -11,6 +14,9 @@ const Service = () => {
         <Banner/>
         <Events/>
         <Brands/>
+        <Others/>
+        <Sports/>
+        <Quote/>
     </div>
   );
 };

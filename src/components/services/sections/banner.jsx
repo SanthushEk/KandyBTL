@@ -9,8 +9,13 @@ const Banner = () => {
       <motion.div
         className="w-full lg:w-1/2"
         initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -50 }}
+        transition={{
+          duration: 1,
+          delay: 0.3, // Delay the animation
+        }}
+        viewport={{ once: false }} // Trigger animation on both scroll down and up
       >
         <img
           src={leftImage}
@@ -23,8 +28,13 @@ const Banner = () => {
       <motion.div
         className="w-full lg:w-1/2 flex flex-col justify-center items-start p-6 lg:p-10"
         initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 50 }}
+        transition={{
+          duration: 1,
+          delay: 0.3, // Delay the animation
+        }}
+        viewport={{ once: false }} // Trigger animation on both scroll down and up
       >
         {/* Title */}
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-wide text-secondary mb-4">

@@ -8,11 +8,12 @@ const Events = () => {
     <div className="flex flex-col p-4 md:flex-row h-auto bg-primary font-futura">
       {/* Left Section */}
       <motion.div
-        className="w-full md:w-1/2  flex flex-col justify-center "
+        className="w-full md:w-1/2 flex flex-col justify-center"
         initial={{ x: "-100%" }} // Start from the left
         whileInView={{ x: 0 }} // Animate to the center
+        exit={{ x: "-100%" }} // Fade out when scrolling up
         transition={{ type: "spring", stiffness: 100, damping: 25 }}
-        viewport={{ once: true }} // Trigger animation only once
+        viewport={{ once: false }} // Trigger animation on both scroll directions
       >
         <div className="p-8">
           <h2 className="text-xl md:text-3xl mb-2 font-bold tracking-wide text-secondary">
@@ -36,10 +37,11 @@ const Events = () => {
       <motion.div
         className="w-full md:w-1/2 h-auto p-6 md:p-10 relative"
         style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
-        initial={{ opacity: 0, x: 100 }} // Start from the right
+        initial={{ opacity: 0, x: -100 }} // Start from the right
         whileInView={{ opacity: 1, x: 0 }} // Animate to the center
+        exit={{ opacity: 0, x: 100 }} // Fade out when scrolling up
         transition={{ duration: 1 }}
-        viewport={{ once: true }} // Trigger animation only once
+        viewport={{ once: false }} // Trigger animation on both scroll directions
       >
         <div className="absolute inset-0 bg-secondary opacity-50 rounded-lg"></div>
 
@@ -55,13 +57,11 @@ const Events = () => {
             most pride in is being part of a leading global BTL agency network,
             committed to delivering exceptional results while promoting a
             sustainable future. We are honored to have been recognized as Event
-            Management Organisation of the Year at the Middle East Event Show &
-            Awards 2021. Additionally, we have been finalists in prestigious
-            categories such as` ` Best Brand Event, Best Community Event, Best
-            Public Event, Best Regional Event, and for notable Australian live
-            music events. Our most recent accomplishment was winning Charity
-            Event of the Year for the 2022 Blood Donation Walk, reflecting our
-            dedication to meaningful and impactful causes.
+            Management Organisation of the Year at the Middle East Event Show & Awards 2021. 
+            Additionally, we have been finalists in prestigious categories such as Best Brand Event, 
+            Best Community Event, Best Public Event, Best Regional Event, and for notable Australian 
+            live music events. Our most recent accomplishment was winning Charity Event of the Year 
+            for the 2022 Blood Donation Walk, reflecting our dedication to meaningful and impactful causes.
           </p>
         </div>
       </motion.div>
