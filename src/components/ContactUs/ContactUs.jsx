@@ -90,7 +90,7 @@ const ContactUs = () => {
                 <h2 className="mt-4 text-xl md:text-3xl font-bold text-secondary">
                   Telephone
                 </h2>
-                <p className="mt-2 text-lg text-blue-600">+1 (555) 000-0000</p>
+                <p className="mt-2 text-lg text-blue-600">+94 (70) 7272 420</p>
               </div>
 
               {/* Opening Hours Card */}
